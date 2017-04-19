@@ -9,10 +9,12 @@ import {
     Route,
 } from 'react-router-dom'
 // 根组件
-import App from './App'
-import About from './About'
+// import App from './App'
 import Login from './components/Login'
 import Index from './components/Index'
+
+//Task
+import Task from './components/task/Task'
 
 import './assets/css/App.css';
 
@@ -24,10 +26,10 @@ class Routes extends Component {
         return (
             <Router>
                 <div style={{height: '100%'}}>
-                    <Route exact path="/" component={App}/>
+                    <Route exact path="/" component={Login}/>
                     <Route path="/index" component={Index}/>
                     <Route path="/login" component={Login}/>
-                    <Route path="/about" component={About}/>
+                    <Route path="/task" component={Task}/>
                 </div>
             </Router>
         )
