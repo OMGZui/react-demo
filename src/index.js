@@ -6,6 +6,8 @@ import {
 
 import Routers from './Routes'
 
+import './assets/css/App.css';
+
 ReactDOM.render(
     <Router>
         <Routers/>

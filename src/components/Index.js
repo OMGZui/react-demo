@@ -10,6 +10,7 @@ import SideBar from './layout/SiderBar';
 import MyHeader from './layout/Header';
 const {Header, Sider, Content} = Layout;
 
+
 class Index extends Component {
 
     constructor(props) {
@@ -36,10 +37,10 @@ class Index extends Component {
         });
     };
 
-    ul(users){
-        return(
+    ul(users) {
+        return (
             users.map(function (value, item) {
-                return(
+                return (
                     <li key={item}>{item}. {value.name}</li>
                 )
             })
@@ -53,6 +54,10 @@ class Index extends Component {
     render() {
         const users = this.state.user;
         const user = this.ul(users);
+        const world = (<span className="world">world</span>);
+        const nav = (
+            <a>O.O</a>
+        );
         return (
             <Layout style={{height: '100%'}}>
                 <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
@@ -64,6 +69,22 @@ class Index extends Component {
                     </Header>
                     <Content style={{margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280}}>
                         <ul>{user}</ul>
+                        <p className="height-30"/>
+                        <div>
+                            <span className="hello">
+                                hello
+                                {nav}
+                            </span>
+                            {world}
+                            <p className="height-30"/>
+                            <span className="success">success</span><span className="weight-10"/>
+                            <span className="error">error</span><span className="weight-10"/>
+                            <span className="warning">warning</span>
+                            <p className="height-30"/>
+                            <span className="if-else">if-else</span>
+                            <p className="height-30"/>
+                            <span className="func">func</span>
+                        </div>
                     </Content>
                 </Layout>
             </Layout>

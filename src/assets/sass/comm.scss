@@ -1,0 +1,65 @@
+/*--------------变量----------------*/
+$size: 18px;
+$color: red; //普通变量
+$baseFontSize:      10px !default; //默认变量
+$global:   #fff !global; //全局变量
+$b_color: red !default;
+.hello {
+  font-size: $size;
+  color: #{$b_color}; //特殊处理
+}
+
+.world {
+  font-size: $size;
+  color: $color;
+}
+/*--------------嵌套----------------*/
+/*--------------运算----------------*/
+.hello {
+  a {
+    color: $color;
+    font-size: $size + 10px;
+  }
+}
+/*--------------继承----------------*/
+.message {
+  border: 2px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  @extend .message;
+  border-color: green;
+}
+
+.error {
+  @extend .message;
+  border-color: red;
+}
+
+.warning {
+  @extend .message;
+  border-color: yellow;
+}
+
+.height-30 {
+  height: 30px;
+}
+
+.weight-10{
+  margin-left: 10px;
+}
+/*--------------条件判断----------------*/
+.if-else {
+  font-size: if($size == 18 , 30px , 10px)
+}
+
+/*--------------函数----------------*/
+@function pxToRem($px){
+  @return $px / $baseFontSize * 1rem;
+}
+
+.func {
+  font-size: pxToRem(16px);
+}

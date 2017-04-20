@@ -16,7 +16,6 @@ import Index from './components/Index'
 //Task
 import Task from './components/task/Task'
 
-import './assets/css/App.css';
 
 //404
 // import NotFound from './components/NotFound';
