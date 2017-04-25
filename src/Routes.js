@@ -16,6 +16,8 @@ import Index from './components/Index'
 //Task
 import Task from './components/task/Task'
 
+//Sass
+import Sass from './components/Sass'
 
 //404
 // import NotFound from './components/NotFound';
@@ -29,6 +31,7 @@ class Routes extends Component {
                     <Route path="/index" component={Index}/>
                     <Route path="/login" component={Login}/>
                     <Route path="/task" component={Task}/>
+                    <Route path="/sass" component={Sass}/>
                 </div>
             </Router>
         )
