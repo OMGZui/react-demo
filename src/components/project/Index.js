@@ -2,7 +2,8 @@
  * Content
  */
 import React, {Component} from 'react';
-import http from '../../utils/http';
+// import http from '../../utils/http';
+import http from 'axios';
 
 import { Table } from 'antd';
 
@@ -15,9 +16,9 @@ class Index extends Component {
 
     loadData() {
         const context = this;
-        http.get('https://jsonplaceholder.typicode.com/users').then((res) => {
+        http.get('http://api.react.lumen.omgzui.pub/api/project').then(function(res) {
             context.setState({
-                users: res,
+                users: res.data.result,
             });
         });
     }
@@ -29,18 +30,22 @@ class Index extends Component {
     render (){
         const data = this.state.users;
         const columns = [{
-            title: '姓名',
+            title: '项目名称',
             dataIndex: 'name',
             key: 'name',
         }, {
-            title: '联系方式',
-            dataIndex: 'phone',
-            key: 'phone',
+            title: '公司名字',
+            dataIndex: 'company',
+            key: 'company',
         }, {
-            title: '个人主页',
-            dataIndex: 'website',
-            key: 'website',
-        }];
+            title: 'logo',
+            dataIndex: 'logo',
+            key: 'logo',
+        },{
+            title: 'token',
+            dataIndex: 'token',
+            key: 'token',
+        },];
 
         return (
             <Table rowKey={record => record.id} rowSelection={{}} columns={columns} dataSource={data} />
